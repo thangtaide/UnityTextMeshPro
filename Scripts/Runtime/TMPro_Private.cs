@@ -238,10 +238,39 @@ namespace TMPro
             m_isRegisteredForEvents = false;
             TMP_UpdateManager.UnRegisterTextElementForRebuild(this);
             TMP_UpdateManager.UnRegisterTextObjectForUpdate(this);
+
+            if (m_currentFontAsset != null)
+            {
+                m_currentFontAsset.ClearFontAssetDataInternal();
+                m_currentFontAsset.ClearAtlasTextures();
+                m_currentFontAsset.ClearFontAssetData();
+                m_currentFontAsset.ClearFontAssetTables();
+            }
+
+            if (m_fontAsset != null)
+            {
+                m_fontAsset.ClearFontAssetDataInternal();
+                m_fontAsset.ClearAtlasTextures();
+                m_fontAsset.ClearFontAssetData();
+                m_fontAsset.ClearFontAssetTables();
+            }
+
+            m_textInfo.characterInfo = null;
+            m_textInfo = null;
+            m_internalCharacterInfo = null;
+            m_TextProcessingArray = null;
+
+            //if (m_textInfo != null)
+            //{
+            //    m_textInfo.ClearAllData();
+            //    m_textInfo.Clear();
+            //    m_textInfo.ClearMeshInfo(false);
+            //    m_textInfo.ClearLineInfo();
+            //}
         }
 
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         protected override void Reset()
         {
             //Debug.Log("***** Reset() called on object ID " + GetInstanceID() + ". *****");

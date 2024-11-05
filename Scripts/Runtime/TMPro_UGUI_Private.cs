@@ -260,6 +260,34 @@ namespace TMPro
             UnityEditor.PrefabUtility.prefabInstanceUpdated -= OnPrefabInstanceUpdate;
             #endif
             m_isRegisteredForEvents = false;
+
+            if (m_currentFontAsset != null)
+            {
+                m_currentFontAsset.ClearFontAssetDataInternal();
+                m_currentFontAsset.ClearAtlasTextures();
+                m_currentFontAsset.ClearFontAssetData();
+                m_currentFontAsset.ClearFontAssetTables();
+            }
+
+            if (m_fontAsset != null)
+            {
+                m_fontAsset.ClearFontAssetDataInternal();
+                m_fontAsset.ClearAtlasTextures();
+                m_fontAsset.ClearFontAssetData();
+                m_fontAsset.ClearFontAssetTables();
+            }
+
+            m_textInfo.characterInfo = null;
+            m_textInfo = null;
+            m_internalCharacterInfo = null;
+            m_TextProcessingArray = null;
+            //if (m_textInfo != null)
+            //{
+            //    m_textInfo.ClearAllData();
+            //    m_textInfo.Clear();
+            //    m_textInfo.ClearMeshInfo(false);
+            //    m_textInfo.ClearLineInfo();
+            //}
         }
 
 
