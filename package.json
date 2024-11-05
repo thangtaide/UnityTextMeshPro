@@ -1,5 +1,5 @@
 {
-  "name": "com.unity.textmeshpro",
+  "name": "com.luan.textmeshpro",
   "displayName": "TextMeshPro",
   "version": "3.0.6",
   "unity": "2020.1",
@@ -15,13 +15,5 @@
   "category": "Text Rendering",
   "dependencies": {
     "com.unity.ugui": "1.0.0"
-  },
-  "repository": {
-    "url": "https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git",
-    "type": "git",
-    "revision": "01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899"
-  },
-  "upmCi": {
-    "footprint": "bfe9ad7192cdd29486fc5980b5ac7d0b3fafcec6"
   }
 }
